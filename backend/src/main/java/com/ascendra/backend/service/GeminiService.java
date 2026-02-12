@@ -22,7 +22,7 @@ public class GeminiService {
     @Value("${gemini.api.key}")
     private String geminiApiKey;
 
-    private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
+    private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=";
 
     public AnalysisResponse analyzeResume(String resumeText, String jobRole, List<String> companies) {
         RestTemplate restTemplate = new RestTemplate();
@@ -48,8 +48,8 @@ public class GeminiService {
                 Return ONLY the JSON. Do not include markdown formatting like ```json.
                 """, jobRole, String.join(", ", companies), resumeText);
 
-        int maxRetries = 3;
-        int retryDelay = 2000;
+        int maxRetries = 5;
+        int retryDelay = 3000; // 3 seconds base delay
 
         for (int i = 0; i <= maxRetries; i++) {
             try {
@@ -81,7 +81,8 @@ public class GeminiService {
                 }
 
             } catch (org.springframework.web.client.HttpClientErrorException.TooManyRequests e) {
-                logToDebugFile("Rate limit hit (429). Attempt " + (i + 1) + " of " + (maxRetries + 1));
+                String errorBody = e.getResponseBodyAsString();
+                logToDebugFile("Rate limit hit (429). Body: " + errorBody + " | Attempt " + (i + 1) + " of " + (maxRetries + 1));
                 if (i < maxRetries) {
                     try {
                         Thread.sleep(retryDelay);
@@ -92,7 +93,7 @@ public class GeminiService {
                         throw new RuntimeException("Interrupted during retry wait");
                     }
                 }
-                throw new RuntimeException("Gemini API Rate Limit Exceeded after retries.");
+                throw new RuntimeException("Gemini API Rate Limit Exceeded. Google says: " + errorBody);
             } catch (Exception e) {
                 // Check if it's a 429 wrapped in another exception or just retry generic errors that might be transient?
                 // For now, let's treat other exceptions as fatal unless we want to be very robust.
@@ -128,21 +129,22 @@ public class GeminiService {
             
             // Navigate to : candidates[0].content.parts[0].text
             JsonNode textNode = root.path("candidates").get(0).path("content").path("parts").get(0).path("text");
-            String extractedJson = textNode.asText();
-            
-            logToDebugFile("Extracted Text from Gemini: " + extractedJson);
-
-            // Robust JSON cleanup
-            // Find first '{' and last '}'
-            int firstBrace = extractedJson.indexOf("{");
-            int lastBrace = extractedJson.lastIndexOf("}");
-            
-            if (firstBrace != -1 && lastBrace != -1 && firstBrace <= lastBrace) {
-                extractedJson = extractedJson.substring(firstBrace, lastBrace + 1);
-            } else {
-                // Fallback cleanup if braces not found (unlikely for valid JSON)
-                extractedJson = extractedJson.replaceAll("```[a-zA-Z]*", "").replaceAll("```", "").trim();
+            if (textNode.isMissingNode()) {
+                throw new RuntimeException("Gemini response is missing text content. Raw: " + jsonResponse);
             }
+            
+            String extractedJson = textNode.asText();
+            logToDebugFile("Extracted Text: " + extractedJson);
+
+            // Clean up Markdown if present
+            extractedJson = extractedJson.trim();
+            if (extractedJson.startsWith("```json")) {
+                extractedJson = extractedJson.substring(7);
+            }
+            if (extractedJson.endsWith("```")) {
+                extractedJson = extractedJson.substring(0, extractedJson.length() - 3);
+            }
+            extractedJson = extractedJson.trim();
 
             return mapper.readValue(extractedJson, AnalysisResponse.class);
 

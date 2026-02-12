@@ -65,7 +65,16 @@ const Dashboard = () => {
             setStep(3);
         } catch (error) {
             console.error("Analysis failed", error);
-            alert("Analysis failed. Please try again.");
+            const backendMessage = error.response?.data?.message || "";
+            const axiosMessage = error.message || "";
+
+            if (backendMessage.includes("429") || axiosMessage.includes("429") || backendMessage.toLowerCase().includes("rate limit")) {
+                alert("The AI is currently at maximum capacity (Rate Limit Reached). Please wait 1-2 minutes and try again. ⏳");
+            } else if (axiosMessage === "Network Error") {
+                alert("Could not connect to the backend. Please ensure the server is running on port 8080.");
+            } else {
+                alert(`Analysis failed: ${backendMessage || axiosMessage || "Please try again."}`);
+            }
             setStep(1);
         }
     };
