@@ -198,7 +198,7 @@ const Dashboard = () => {
                     List companies you've applied to (and possibly been rejected from). This helps us analyze fit.
                 </p>
                 <div className="space-y-4 mb-10">
-                    {companies.map((company, index) => (
+                    {companies.map( (company, index) => (
                         <div key={index} className="flex items-center gap-4">
                             <input
                                 type="text"

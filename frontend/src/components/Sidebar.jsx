@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cyan-500 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.4)] group-hover:scale-110 transition-transform">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary-500 flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] group-hover:scale-110 transition-transform">
                         <span className="text-white font-black text-lg sm:text-xl">A</span>
                     </div>
                     <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">Ascendra</span>
@@ -45,7 +45,7 @@ const Navbar = () => {
                                 key={item.path}
                                 to={item.path}
                                 className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${active
-                                    ? 'bg-cyan-500/10 text-cyan-400 shadow-[inset_0_0_12px_rgba(6,182,212,0.1)]'
+                                    ? 'bg-primary-500/10 text-primary-400 shadow-[inset_0_0_12px_rgba(37,99,235,0.1)]'
                                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                                     }`}
                             >
@@ -91,7 +91,7 @@ const Navbar = () => {
                                     to={item.path}
                                     onClick={() => setIsOpen(false)}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-semibold transition-all ${active
-                                        ? 'bg-cyan-500/10 text-cyan-400'
+                                        ? 'bg-primary-500/10 text-primary-400'
                                         : 'text-gray-400'
                                         }`}
                                 >
