@@ -71,7 +71,7 @@ const Dashboard = () => {
             if (backendMessage.includes("429") || axiosMessage.includes("429") || backendMessage.toLowerCase().includes("rate limit")) {
                 alert("The AI is currently at maximum capacity (Rate Limit Reached). Please wait 1-2 minutes and try again. ⏳");
             } else if (axiosMessage === "Network Error") {
-                alert("Could not connect to the backend. Please ensure the server is running on port 8080.");
+                alert(`Could not connect to the backend (${api.defaults.baseURL}). If you are on the deployed site, please ensure VITE_API_URL is set correctly in Railway.`);
             } else {
                 alert(`Analysis failed: ${backendMessage || axiosMessage || "Please try again."}`);
             }
