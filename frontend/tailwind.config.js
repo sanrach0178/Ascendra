@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 
 const primary = {
-    50: '#020617', // Slate 950
-    100: '#020617', // Slate 950
-    200: '#020617', // Slate 950
-    300: '#0f172a', // Slate 900
-    400: '#1e293b', // Slate 800 (Matte Dark Blue - Text/Icons)
-    500: '#0f172a', // Slate 900 (Deep Matte Blue - Main Brand)
-    600: '#020617', // Slate 950
-    700: '#000000', // Black
-    800: '#000000', // Black
-    900: '#000000', // Black
+    50: '#172554', // Keep backgrounds dark
+    100: '#172554',
+    200: '#1e3a8a',
+    300: '#1e40af',
+    400: '#3b82f6', // Vibrant Blue (Icons)
+    500: '#2563eb', // Royal Blue (Buttons/Brand)
+    600: '#1d4ed8', // Darker Royal (Hover)
+    700: '#1e40af', // Cobalt
+    800: '#1e3a8a', // Navy
+    900: '#172554', // Midnight
     950: '#000000', // Black
 };
 
