@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Midnight / Black Palette (Strictly Dark, No Cobalt) */
-  --color-primary-50: #0b1120;
-  --color-primary-100: #0b1120;
-  --color-primary-200: #0b1120;
-  --color-primary-300: #172554;
-  --color-primary-400: #1e3a8a;
-  --color-primary-500: #172554;
-  --color-primary-600: #0f172a;
-  --color-primary-700: #020617;
+  /* Matte Dark Blue (Slate) Palette */
+  --color-primary-50: #020617;
+  --color-primary-100: #020617;
+  --color-primary-200: #020617;
+  --color-primary-300: #0f172a;
+  --color-primary-400: #1e293b;
+  --color-primary-500: #0f172a;
+  --color-primary-600: #020617;
+  --color-primary-700: #000000;
   --color-primary-800: #000000;
   --color-primary-900: #000000;
   --color-primary-950: #000000;

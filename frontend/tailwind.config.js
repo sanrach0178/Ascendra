@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 
 const primary = {
-    50: '#0b1120', // Almost Black
-    100: '#0b1120', // Almost Black
-    200: '#0b1120', // Almost Black
-    300: '#172554', // Midnight Blue
-    400: '#1e3a8a', // Navy (Lightest accent) - Replacing Cobalt
-    500: '#172554', // Midnight Blue (Main Brand)
-    600: '#0f172a', // Slate 900
-    700: '#020617', // Slate 950
-    800: '#000000', // Pure Black
-    900: '#000000', // Pure Black
-    950: '#000000', // Pure Black
+    50: '#020617', // Slate 950
+    100: '#020617', // Slate 950
+    200: '#020617', // Slate 950
+    300: '#0f172a', // Slate 900
+    400: '#1e293b', // Slate 800 (Matte Dark Blue - Text/Icons)
+    500: '#0f172a', // Slate 900 (Deep Matte Blue - Main Brand)
+    600: '#020617', // Slate 950
+    700: '#000000', // Black
+    800: '#000000', // Black
+    900: '#000000', // Black
+    950: '#000000', // Black
 };
 
 const dark = {
