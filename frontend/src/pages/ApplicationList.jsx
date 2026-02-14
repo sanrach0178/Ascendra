@@ -87,26 +87,26 @@ const ApplicationList = () => {
     });
 
     return (
-        <div className="p-4 sm:p-8 min-h-screen bg-gray-900 text-white w-full">
+        <div className="p-4 sm:p-8 min-h-screen bg-[#09090b] text-white w-full">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold">Applications</h1>
                 <button
                     onClick={handleAdd}
-                    className="w-full sm:w-auto justify-center flex items-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 rounded-xl transition-all active:scale-95 shadow-lg shadow-blue-900/20"
+                    className="w-full sm:w-auto justify-center flex items-center px-4 py-2.5 bg-primary-500 hover:bg-primary-600 rounded-xl transition-all active:scale-95 shadow-lg shadow-primary-500/20"
                 >
                     <Plus size={18} className="mr-2" />
                     Add Application
                 </button>
             </div>
 
-            <div className="bg-gray-800/50 border border-gray-700 p-4 rounded-2xl shadow-lg mb-6 flex flex-col sm:flex-row gap-4">
+            <div className="bg-[#18181b] border border-white/10 p-4 rounded-2xl shadow-lg mb-6 flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center">
                     <Filter size={18} className="text-gray-400 mr-2" />
                     <span className="text-sm font-semibold text-gray-400 mr-2">Filters:</span>
                 </div>
                 <div className="flex gap-3 w-full sm:w-auto">
                     <select
-                        className="flex-1 sm:flex-none bg-gray-700 border-none rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        className="flex-1 sm:flex-none bg-[#09090b] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all"
                         value={resumeFilter}
                         onChange={(e) => setResumeFilter(e.target.value)}
                     >
@@ -116,7 +116,7 @@ const ApplicationList = () => {
                         <option value="V3">V3</option>
                     </select>
                     <select
-                        className="flex-1 sm:flex-none bg-gray-700 border-none rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        className="flex-1 sm:flex-none bg-[#09090b] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-primary-500 outline-none transition-all"
                         value={sourceFilter}
                         onChange={(e) => setSourceFilter(e.target.value)}
                     >
@@ -130,13 +130,13 @@ const ApplicationList = () => {
                 </div>
             </div>
 
-            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="bg-[#18181b] rounded-xl shadow-lg overflow-hidden border border-white/10">
                 {loading ? (
                     <div className="p-8 text-center text-gray-400">Loading...</div>
                 ) : (
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
-                            <thead className="bg-gray-750 border-b border-gray-700">
+                            <thead className="bg-[#27272a] border-b border-white/10">
                                 <tr>
                                     <th className="px-6 py-4 font-semibold text-gray-400">Company</th>
                                     <th className="px-6 py-4 font-semibold text-gray-400">Role</th>
@@ -147,10 +147,10 @@ const ApplicationList = () => {
                                     <th className="px-6 py-4 font-semibold text-gray-400">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-700">
+                            <tbody className="divide-y divide-white/5">
                                 {filteredApplications.length > 0 ? (
                                     filteredApplications.map((app) => (
-                                        <tr key={app.id} className="hover:bg-gray-750 transition-colors">
+                                        <tr key={app.id} className="hover:bg-white/5 transition-colors">
                                             <td className="px-6 py-4">{app.company}</td>
                                             <td className="px-6 py-4">{app.role}</td>
                                             <td className="px-6 py-4">{app.dateApplied}</td>
