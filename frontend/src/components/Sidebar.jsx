@@ -25,7 +25,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
@@ -80,7 +80,7 @@ const Navbar = () => {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden bg-[#020617] border-b border-white/10 animate-in slide-in-from-top duration-300">
+                <div className="md:hidden bg-[#09090b] border-b border-white/10 animate-in slide-in-from-top duration-300">
                     <div className="px-4 py-6 space-y-3">
                         {navItems.map((item) => {
                             const Icon = item.icon;

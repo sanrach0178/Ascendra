@@ -41,7 +41,7 @@ const AnalysisResult = ({ analysis, onReset, jobRole, companies }) => {
 
             const dataUrl = await toPng(element, {
                 cacheBust: true,
-                backgroundColor: '#020617',
+                backgroundColor: '#09090b',
                 width: width,
                 height: height,
                 filter: (node) => {
@@ -80,7 +80,7 @@ const AnalysisResult = ({ analysis, onReset, jobRole, companies }) => {
 
     const scoreData = [
         { name: 'Score', value: matchScore, color: matchScore > 75 ? '#10b981' : matchScore > 50 ? '#f59e0b' : '#ef4444' },
-        { name: 'Remaining', value: 100 - matchScore, color: '#1e293b' }
+        { name: 'Remaining', value: 100 - matchScore, color: '#27272a' }
     ];
 
     // Helper to parse bold text from Gemini response (e.g., "**Action:** details...")
@@ -114,7 +114,7 @@ const AnalysisResult = ({ analysis, onReset, jobRole, companies }) => {
         <div
             ref={reportRef}
             ref-report-container="true"
-            className={`space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700 pb-20 p-8 rounded-[40px] bg-[#020617] ${isCapturing ? 'animate-none' : ''}`}
+            className={`space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-700 pb-20 p-8 rounded-[40px] bg-[#09090b] ${isCapturing ? 'animate-none' : ''}`}
         >
 
             {/* Header / Score Section */}
@@ -235,7 +235,7 @@ const AnalysisResult = ({ analysis, onReset, jobRole, companies }) => {
 
             {/* Company Fit - Full Width at Bottom */}
             <div className="w-full">
-                <div style={{ backgroundColor: '#0f172a', border: '1px solid rgba(255, 255, 255, 0.05)' }} className="rounded-3xl overflow-hidden shadow-2xl">
+                <div style={{ backgroundColor: '#18181b', border: '1px solid rgba(255, 255, 255, 0.05)' }} className="rounded-3xl overflow-hidden shadow-2xl">
                     <div style={{ background: 'linear-gradient(to right, rgba(167, 139, 250, 0.1), rgba(244, 114, 182, 0.1))' }} className="px-10 py-8 border-b border-white/5 flex items-center justify-between">
                         <div className="flex items-center gap-4">
                             <div style={{ backgroundColor: 'rgba(167, 139, 250, 0.1)' }} className="p-3 rounded-2xl">

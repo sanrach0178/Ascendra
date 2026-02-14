@@ -156,7 +156,7 @@ const Dashboard = () => {
             </div>
 
             {/* Target Role Section */}
-            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
+            <div className="bg-[#18181b]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
                 <h2 className="text-base sm:text-lg font-bold text-white mb-6 flex items-center gap-3">
                     <Target className="w-5 h-5 text-cyan-400" />
                     Target Role
@@ -165,7 +165,7 @@ const Dashboard = () => {
                     <label className="block text-gray-400 text-sm font-medium mb-4">Desired Job Role</label>
                     <div className="relative group">
                         <select
-                            className="w-full appearance-none bg-[#020617] border border-white/10 rounded-xl px-5 py-4 text-white hover:border-white/20 focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all cursor-pointer pr-12 text-base shadow-lg"
+                            className="w-full appearance-none bg-[#09090b] border border-white/10 rounded-xl px-5 py-4 text-white hover:border-white/20 focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all cursor-pointer pr-12 text-base shadow-lg"
                             value={jobRole}
                             onChange={(e) => setJobRole(e.target.value)}
                         >
@@ -189,7 +189,7 @@ const Dashboard = () => {
             </div>
 
             {/* Application History Section */}
-            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
+            <div className="bg-[#18181b]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
                 <h2 className="text-base sm:text-lg font-bold text-white mb-1 flex items-center gap-3">
                     <ClipboardList className="w-5 h-5 text-cyan-400" />
                     Application History
@@ -203,7 +203,7 @@ const Dashboard = () => {
                             <input
                                 type="text"
                                 placeholder="Company Name (e.g. Google)"
-                                className="flex-1 bg-[#020617] border border-white/10 rounded-xl px-5 py-3.5 text-base text-white placeholder-gray-600 focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all shadow-md"
+                                className="flex-1 bg-[#09090b] border border-white/10 rounded-xl px-5 py-3.5 text-base text-white placeholder-gray-600 focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition-all shadow-md"
                                 value={company}
                                 onChange={(e) => handleCompanyChange(index, e.target.value)}
                             />

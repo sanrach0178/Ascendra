@@ -82,7 +82,7 @@ const Analytics = () => {
     ] : [];
 
     return (
-        <div className="p-4 sm:p-8 min-h-screen bg-[#020617] text-white w-full space-y-8 animate-in fade-in duration-700">
+        <div className="p-4 sm:p-8 min-h-screen bg-[#09090b] text-white w-full space-y-8 animate-in fade-in duration-700">
             <div className="flex flex-col gap-2">
                 <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">Analytics Dashboard</h1>
                 <p className="text-gray-400 text-base sm:text-lg">Visualizing your career progression and resume performance.</p>
@@ -151,8 +151,8 @@ const Analytics = () => {
                                 />
                                 <Tooltip
                                     contentStyle={{
-                                        backgroundColor: '#0f172a',
-                                        borderColor: '#1e293b',
+                                        backgroundColor: '#18181b',
+                                        borderColor: '#27272a',
                                         borderRadius: '16px',
                                         boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                                         border: '1px solid rgba(255,255,255,0.1)'
