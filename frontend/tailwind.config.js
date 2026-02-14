@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
 const primary = {
-    50: '#172554', // Deep Navy
-    100: '#172554', // Deep Navy
-    200: '#172554', // Deep Navy
-    300: '#1e3a8a', // Navy
-    400: '#1e40af', // Cobalt (The "lightest" accent now)
-    500: '#1e3a8a', // Navy (Main Brand)
-    600: '#172554', // Deep Navy
-    700: '#0b1120', // Almost Black
-    800: '#020617', // Black
+    50: '#0b1120', // Almost Black
+    100: '#0b1120', // Almost Black
+    200: '#0b1120', // Almost Black
+    300: '#172554', // Midnight Blue
+    400: '#1e3a8a', // Navy (Lightest accent) - Replacing Cobalt
+    500: '#172554', // Midnight Blue (Main Brand)
+    600: '#0f172a', // Slate 900
+    700: '#020617', // Slate 950
+    800: '#000000', // Pure Black
     900: '#000000', // Pure Black
     950: '#000000', // Pure Black
 };
