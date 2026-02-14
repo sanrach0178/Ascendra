@@ -82,10 +82,10 @@ const Analytics = () => {
     ] : [];
 
     return (
-        <div className="p-8 min-h-screen bg-[#020617] text-white w-full space-y-8 animate-in fade-in duration-700">
+        <div className="p-4 sm:p-8 min-h-screen bg-[#020617] text-white w-full space-y-8 animate-in fade-in duration-700">
             <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-black tracking-tight text-white">Analytics Dashboard</h1>
-                <p className="text-gray-400 text-lg">Visualizing your career progression and resume performance.</p>
+                <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">Analytics Dashboard</h1>
+                <p className="text-gray-400 text-base sm:text-lg">Visualizing your career progression and resume performance.</p>
             </div>
 
             {/* Metrics Grid */}
@@ -110,7 +110,7 @@ const Analytics = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Resume Performance Area Chart */}
-                <div className="lg:col-span-2 glass-card p-8 rounded-3xl border border-white/5">
+                <div className="lg:col-span-2 glass-card p-5 sm:p-8 rounded-3xl border border-white/5">
                     <div className="flex items-center justify-between mb-8">
                         <div>
                             <h2 className="text-xl font-bold flex items-center gap-2">
@@ -183,7 +183,7 @@ const Analytics = () => {
                 </div>
 
                 {/* Funnel Chart */}
-                <div className="glass-card p-8 rounded-3xl border border-white/5">
+                <div className="glass-card p-5 sm:p-8 rounded-3xl border border-white/5">
                     <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
                         <Users className="w-5 h-5 text-purple-400" />
                         Application Funnel
@@ -230,27 +230,27 @@ const Analytics = () => {
                     <table className="w-full text-left">
                         <thead>
                             <tr className="bg-white/[0.01]">
-                                <th className="px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-xs">Version</th>
-                                <th className="px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-xs">Total Applications</th>
-                                <th className="px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-xs">Interviews</th>
-                                <th className="px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-xs">Offers</th>
-                                <th className="px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-xs text-right">Success Rate</th>
+                                <th className="px-5 sm:px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs">Version</th>
+                                <th className="px-5 sm:px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs">Applications</th>
+                                <th className="px-5 sm:px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs">Interviews</th>
+                                <th className="px-5 sm:px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs">Offers</th>
+                                <th className="px-5 sm:px-8 py-5 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs text-right">Success</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-white/5">
                             {resumeData.map((item) => (
-                                <tr key={item.version} className="hover:bg-white/[0.02] transition-colors group">
-                                    <td className="px-8 py-6">
-                                        <span className="px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-xl font-bold text-sm border border-cyan-500/10 group-hover:bg-cyan-500/20 transition-all">
+                                <tr key={item.version} className="hover:bg-white/[0.02] transition-colors group text-sm sm:text-base">
+                                    <td className="px-5 sm:px-8 py-6">
+                                        <span className="px-3 sm:px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-xl font-bold text-xs sm:text-sm border border-cyan-500/10 group-hover:bg-cyan-500/20 transition-all">
                                             {item.version}
                                         </span>
                                     </td>
-                                    <td className="px-8 py-6 text-gray-200 font-medium">{item.totalApplications}</td>
-                                    <td className="px-8 py-6 text-gray-200 font-medium">{item.interviews}</td>
-                                    <td className="px-8 py-6 text-gray-200 font-medium">{item.offers}</td>
-                                    <td className="px-8 py-6 text-right">
-                                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold text-sm">
-                                            <ArrowUpRight className="w-4 h-4" />
+                                    <td className="px-5 sm:px-8 py-6 text-gray-200 font-medium">{item.totalApplications}</td>
+                                    <td className="px-5 sm:px-8 py-6 text-gray-200 font-medium">{item.interviews}</td>
+                                    <td className="px-5 sm:px-8 py-6 text-gray-200 font-medium">{item.offers}</td>
+                                    <td className="px-5 sm:px-8 py-6 text-right">
+                                        <div className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold text-[10px] sm:text-sm">
+                                            <ArrowUpRight className="w-3 h-3 sm:w-4 h-4" />
                                             {item.offerRate.toFixed(1)}%
                                         </div>
                                     </td>

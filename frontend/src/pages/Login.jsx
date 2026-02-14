@@ -43,7 +43,7 @@ const Login = () => {
 
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-dark-900/50 rounded-full blur-[100px] -z-10"></div>
 
-            <Card className="w-full max-w-md relative z-10 border-dark-700/50 backdrop-blur-2xl">
+            <Card className="w-full max-w-md mx-4 relative z-10 border-dark-700/50 backdrop-blur-2xl">
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-500/10 text-primary-400 mb-4 ring-1 ring-primary-500/20">
                         <User className="w-6 h-6" />

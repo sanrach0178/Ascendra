@@ -109,8 +109,8 @@ const Dashboard = () => {
             </div>
 
             {/* Upload Resume Section */}
-            <div className="glass-card rounded-2xl p-6 mb-6">
-                <h2 className="text-base font-bold text-white mb-4 flex items-center gap-2">
+            <div className="glass-card rounded-2xl p-4 sm:p-6 mb-6">
+                <h2 className="text-sm sm:text-base font-bold text-white mb-4 flex items-center gap-2">
                     <FileText className="w-4 h-4 text-cyan-400" />
                     Upload Resume
                 </h2>
@@ -156,8 +156,8 @@ const Dashboard = () => {
             </div>
 
             {/* Target Role Section */}
-            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-8 mb-8">
-                <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-3">
+            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
+                <h2 className="text-base sm:text-lg font-bold text-white mb-6 flex items-center gap-3">
                     <Target className="w-5 h-5 text-cyan-400" />
                     Target Role
                 </h2>
@@ -189,8 +189,8 @@ const Dashboard = () => {
             </div>
 
             {/* Application History Section */}
-            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-8 mb-8">
-                <h2 className="text-lg font-bold text-white mb-1 flex items-center gap-3">
+            <div className="bg-[#0f172a]/20 border border-white/5 rounded-2xl p-5 sm:p-8 mb-8">
+                <h2 className="text-base sm:text-lg font-bold text-white mb-1 flex items-center gap-3">
                     <ClipboardList className="w-5 h-5 text-cyan-400" />
                     Application History
                 </h2>
@@ -218,16 +218,16 @@ const Dashboard = () => {
                 </div>
 
                 {/* Bottom Buttons */}
-                <div className="flex items-center gap-6">
+                <div className="flex flex-col sm:flex-row items-center gap-6">
                     <button
                         onClick={handleAddCompany}
-                        className="flex items-center gap-2 text-base text-cyan-400 hover:text-cyan-300 font-bold transition-all hover:translate-x-1"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 text-base text-cyan-400 hover:text-cyan-300 font-bold transition-all hover:translate-x-1"
                     >
                         <span className="text-xl">+</span> Add another company
                     </button>
                     <button
                         onClick={handleAnalyze}
-                        className="flex items-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-base rounded-xl transition-all shadow-lg shadow-cyan-500/20 active:scale-95 group"
+                        className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-base rounded-xl transition-all shadow-lg shadow-cyan-500/20 active:scale-95 group"
                     >
                         Analyze my Profile
                         <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
