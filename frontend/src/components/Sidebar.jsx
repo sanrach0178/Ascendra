@@ -29,9 +29,9 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
-                    <img src={Logo} alt="Ascendra Logo" className="w-14 h-14 sm:w-auto sm:h-[72px] object-contain group-hover:scale-110 transition-transform" />
-                    <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">Ascendra</span>
+                <Link to="/" className="flex items-center gap-3 group h-full">
+                    <img src={Logo} alt="Ascendra Logo" className="h-10 w-auto sm:h-14 object-contain group-hover:scale-110 transition-transform" />
+                    <span className="text-white font-bold text-xl sm:text-2xl tracking-tight pt-1">Ascendra</span>
                 </Link>
 
                 {/* Desktop Nav Links */}
