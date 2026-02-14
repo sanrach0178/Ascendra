@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { LayoutDashboard, FileText, BarChart2, LogOut, Menu, X } from 'lucide-react';
+import Logo from '../assets/logo.png';
 
 const Navbar = () => {
     const { logout } = useContext(AuthContext);
@@ -29,53 +30,52 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary-500 flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] group-hover:scale-110 transition-transform">
-                        <span className="text-white font-black text-lg sm:text-xl">A</span>
+                    <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
+                        <img src={Logo} alt="Ascendra Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform" />
+                        <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">Ascendra</span>
+                    </Link>
+
+                    {/* Desktop Nav Links */}
+                    <div className="hidden md:flex items-center gap-2">
+                        {navItems.map((item) => {
+                            const Icon = item.icon;
+                            const active = isActive(item.path);
+                            return (
+                                <Link
+                                    key={item.path}
+                                    to={item.path}
+                                    className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${active
+                                        ? 'bg-primary-500/10 text-primary-400 shadow-[inset_0_0_12px_rgba(37,99,235,0.1)]'
+                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    <Icon className="w-4 h-4" />
+                                    <span>{item.label}</span>
+                                </Link>
+                            );
+                        })}
                     </div>
-                    <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">Ascendra</span>
-                </Link>
 
-                {/* Desktop Nav Links */}
-                <div className="hidden md:flex items-center gap-2">
-                    {navItems.map((item) => {
-                        const Icon = item.icon;
-                        const active = isActive(item.path);
-                        return (
-                            <Link
-                                key={item.path}
-                                to={item.path}
-                                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${active
-                                    ? 'bg-primary-500/10 text-primary-400 shadow-[inset_0_0_12px_rgba(37,99,235,0.1)]'
-                                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                    }`}
-                            >
-                                <Icon className="w-4 h-4" />
-                                <span>{item.label}</span>
-                            </Link>
-                        );
-                    })}
-                </div>
+                    {/* Desktop Logout */}
+                    <div className="hidden md:block">
+                        <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2 px-5 py-2.5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl text-sm font-semibold transition-all duration-300 hover:border-white/20"
+                        >
+                            <LogOut className="w-4 h-4" />
+                            <span>Logout</span>
+                        </button>
+                    </div>
 
-                {/* Desktop Logout */}
-                <div className="hidden md:block">
-                    <button
-                        onClick={handleLogout}
-                        className="flex items-center gap-2 px-5 py-2.5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl text-sm font-semibold transition-all duration-300 hover:border-white/20"
-                    >
-                        <LogOut className="w-4 h-4" />
-                        <span>Logout</span>
-                    </button>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <div className="md:hidden">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="p-2 text-gray-400 hover:text-white transition-colors"
-                    >
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
-                </div>
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="p-2 text-gray-400 hover:text-white transition-colors"
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
             </div>
 
             {/* Mobile Navigation */}
