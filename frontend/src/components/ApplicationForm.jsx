@@ -41,8 +41,8 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl w-full max-w-md p-6 sm:p-8 relative animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+            <div className="bg-[#18181b] border border-white/10 rounded-2xl shadow-2xl w-full max-w-md p-6 sm:p-8 relative animate-in zoom-in-95 duration-200">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-white"
@@ -62,7 +62,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                             value={formData.company}
                             onChange={handleChange}
                             required
-                            className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                            className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                         />
                     </div>
 
@@ -74,7 +74,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                             value={formData.role}
                             onChange={handleChange}
                             required
-                            className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                            className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                         />
                     </div>
 
@@ -87,7 +87,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                                 value={formData.dateApplied}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                             />
                         </div>
                         <div>
@@ -96,7 +96,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                                 name="resumeVersion"
                                 value={formData.resumeVersion}
                                 onChange={handleChange}
-                                className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                             >
                                 <option value="V1">V1</option>
                                 <option value="V2">V2</option>
@@ -113,7 +113,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                                 name="source"
                                 value={formData.source}
                                 onChange={handleChange}
-                                className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                             >
                                 <option value="COLD_APPLY">Cold Apply</option>
                                 <option value="REFERRAL">Referral</option>
@@ -128,7 +128,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                                 name="currentStage"
                                 value={formData.currentStage}
                                 onChange={handleChange}
-                                className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                             >
                                 <option value="APPLIED">Applied</option>
                                 <option value="ONLINE_ASSESSMENT">Online Assessment</option>
@@ -146,7 +146,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                             name="finalOutcome"
                             value={formData.finalOutcome}
                             onChange={handleChange}
-                            className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500"
+                            className="w-full bg-[#09090b] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                         >
                             <option value="IN_PROGRESS">In Progress</option>
                             <option value="OFFER">Offer</option>
@@ -164,7 +164,7 @@ const ApplicationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
+                            className="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-primary-500/20 active:scale-95"
                         >
                             Save Application
                         </button>
