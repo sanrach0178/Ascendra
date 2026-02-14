@@ -87,45 +87,47 @@ const ApplicationList = () => {
     });
 
     return (
-        <div className="p-8 min-h-screen bg-gray-900 text-white w-full">
-            <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold">Applications</h1>
+        <div className="p-4 sm:p-8 min-h-screen bg-gray-900 text-white w-full">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                <h1 className="text-2xl sm:text-3xl font-bold">Applications</h1>
                 <button
                     onClick={handleAdd}
-                    className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                    className="w-full sm:w-auto justify-center flex items-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 rounded-xl transition-all active:scale-95 shadow-lg shadow-blue-900/20"
                 >
-                    <Plus size={20} className="mr-2" />
+                    <Plus size={18} className="mr-2" />
                     Add Application
                 </button>
             </div>
 
-            <div className="bg-gray-800 p-4 rounded-xl shadow-lg mb-6 flex gap-4">
+            <div className="bg-gray-800/50 border border-gray-700 p-4 rounded-2xl shadow-lg mb-6 flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center">
-                    <Filter size={20} className="text-gray-400 mr-2" />
-                    <span className="text-gray-400 mr-2">Filters:</span>
+                    <Filter size={18} className="text-gray-400 mr-2" />
+                    <span className="text-sm font-semibold text-gray-400 mr-2">Filters:</span>
                 </div>
-                <select
-                    className="bg-gray-700 border-none rounded px-3 py-1 text-white focus:ring-0"
-                    value={resumeFilter}
-                    onChange={(e) => setResumeFilter(e.target.value)}
-                >
-                    <option value="All">All Resumes</option>
-                    <option value="V1">V1</option>
-                    <option value="V2">V2</option>
-                    <option value="V3">V3</option>
-                </select>
-                <select
-                    className="bg-gray-700 border-none rounded px-3 py-1 text-white focus:ring-0"
-                    value={sourceFilter}
-                    onChange={(e) => setSourceFilter(e.target.value)}
-                >
-                    <option value="All">All Sources</option>
-                    <option value="COLD_APPLY">Cold Apply</option>
-                    <option value="REFERRAL">Referral</option>
-                    <option value="CAMPUS">Campus</option>
-                    <option value="LINKEDIN">LinkedIn</option>
-                    <option value="OTHER">Other</option>
-                </select>
+                <div className="flex gap-3 w-full sm:w-auto">
+                    <select
+                        className="flex-1 sm:flex-none bg-gray-700 border-none rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        value={resumeFilter}
+                        onChange={(e) => setResumeFilter(e.target.value)}
+                    >
+                        <option value="All">All Resumes</option>
+                        <option value="V1">V1</option>
+                        <option value="V2">V2</option>
+                        <option value="V3">V3</option>
+                    </select>
+                    <select
+                        className="flex-1 sm:flex-none bg-gray-700 border-none rounded-lg px-3 py-2 text-sm text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        value={sourceFilter}
+                        onChange={(e) => setSourceFilter(e.target.value)}
+                    >
+                        <option value="All">All Sources</option>
+                        <option value="COLD_APPLY">Cold Apply</option>
+                        <option value="REFERRAL">Referral</option>
+                        <option value="CAMPUS">Campus</option>
+                        <option value="LINKEDIN">LinkedIn</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
             </div>
 
             <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
