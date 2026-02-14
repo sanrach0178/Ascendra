@@ -30,7 +30,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-3 group h-full">
-                    <img src={Logo} alt="Ascendra Logo" className="h-10 w-auto sm:h-14 object-contain group-hover:scale-110 transition-transform" />
+                    <img src={Logo} alt="Ascendra Logo" className="h-9 w-auto sm:h-12 object-contain group-hover:scale-110 transition-transform" />
                     <span className="text-white font-bold text-xl sm:text-2xl tracking-tight pt-1">Ascendra</span>
                 </Link>
 
